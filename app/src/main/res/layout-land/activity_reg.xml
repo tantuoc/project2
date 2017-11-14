@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.RegActivity">
+
+    <TextView
+        android:id="@+id/textDangKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="ĐĂNG KÍ"
+        android:textColor="#FF0000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/textTK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:text="Tài Khoản : "
+            android:textColor="#121211"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textMK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textTK"
+            android:layout_alignStart="@+id/textTK"
+            android:layout_below="@+id/textTK"
+            android:layout_marginTop="10dp"
+            android:text="Mật Khẩu : "
+            android:textColor="#121211"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textXNMK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textMK"
+            android:text="Xác Nhận MK : "
+            android:textColor="#121211"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textXNMK"
+            android:text="Email : "
+            android:layout_marginTop="10dp"
+            android:textColor="#121211"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/editTextTK"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/textTK"
+            android:layout_alignBottom="@+id/textTK"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:inputType="text"
+            android:textColor="#000"
+            />
+
+        <EditText
+            android:id="@+id/editTextMK"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/textMK"
+            android:layout_alignBottom="@+id/textMK"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:inputType="textPassword"
+            android:textColor="#000"
+           />
+
+        <EditText
+            android:id="@+id/editTextXNMK"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/textXNMK"
+            android:layout_alignBottom="@+id/textXNMK"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:inputType="textPassword"
+            android:textColor="#000"
+          />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_alignBaseline="@+id/textEmail"
+            android:layout_alignBottom="@+id/textEmail"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:inputType="textEmailAddress"
+            android:textColor="#000"
+           />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/gioitinh"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp">
+
+        <RadioGroup
+            android:id="@+id/groupGenre"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/nam"
+                android:layout_width="99dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="Nam"
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/nu"
+                android:layout_width="91dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Nữ"
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/khac"
+                android:layout_width="91dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Khác."
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="5dp"
+        android:paddingLeft="5dp"
+        android:text="Bạn đồng ý với Điều khoản của chúng tôi"
+        android:textColor="#3c3d41"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btDK"
+            android:layout_width="141dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="196dp"
+            android:background="#dcb3b8ca"
+            android:text="Đăng ký"
+            android:textColor="#143cdc"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btDN"
+            android:layout_width="147dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="51dp"
+            android:background="#dcb3b8ca"
+            android:text="Đăng Nhập"
+            android:textColor="#143cdc"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+</LinearLayout>

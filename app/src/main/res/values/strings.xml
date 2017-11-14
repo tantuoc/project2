@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Project2_tbdd</string>
+    <string name="reg">Registry</string>
+    <string name="autolog">Auto Login</string>
+    <string name="login">Login</string>
+    <string name="username">User Name</string>
+    <string name="pass">Password</string>
+    <string name="viewList">View Account List</string>
+    <string name="image">iconImage</string>
+    <string name="nameUser">Name User</string>
+    <string name="detail">Detail User</string>
+    <string name="logOut">Log out</string>
+</resources>
