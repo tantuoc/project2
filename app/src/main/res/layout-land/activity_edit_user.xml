@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EditUserActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+
+        android:layout_marginTop="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/textbox_background" />
+
+    <EditText
+        android:background="@drawable/textbox_background"
+        android:id="@+id/editUser"
+        android:layout_width="368dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <EditText
+        android:background="@drawable/textbox_background"
+        android:id="@+id/editEmail"
+        android:layout_width="368dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editUser" />
+
+    <EditText
+        android:background="@drawable/textbox_background"
+        android:id="@+id/editPasswd"
+        android:layout_width="368dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="New password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="368dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Update"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gioitinh" />
+
+    <LinearLayout
+        android:id="@+id/gioitinh"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPasswd">
+
+        <RadioGroup
+            android:id="@+id/groupGenre"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <RadioButton
+                android:id="@+id/rnam"
+                android:layout_width="99dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Nam"
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rnu"
+                android:layout_width="91dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Nữ"
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rkhac"
+                android:layout_width="91dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Khác."
+                android:textColor="#3c3d41"
+                android:textSize="20dp" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
