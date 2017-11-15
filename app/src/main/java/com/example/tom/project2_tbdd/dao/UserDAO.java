@@ -64,29 +64,52 @@ public class UserDAO {
             String password = cur.getString(2);
             String email = cur.getString(3);
             long genre = cur.getLong(4);
-            u = new User(username, password, email, genre);
+            u = new User();
+            u.setId(_id);
+            u.setUsername(username);
+            u.setPassword(password);
+            u.setEmail(email);
+            u.setGenre(genre);
             listUser.add(u);
             cur.moveToNext();
         }
 
         return listUser;
     }
-    public boolean login(String username,String password){
+
+    public boolean login(String username, String password) {
 
         Cursor cur = db.query(UserCreate.TB_USER, colums, null, null, null, null, null);
         cur.moveToFirst();
         while (!cur.isAfterLast()) {
             String user = cur.getString(1);
             String pass = cur.getString(2);
-            if(username.trim().equalsIgnoreCase(user)&&password.trim().equals(pass)){
-                return  true;
-            }
-            else {
+            if (username.trim().equalsIgnoreCase(user) && password.trim().equals(pass)) {
+                return true;
+            } else {
                 cur.moveToNext();
             }
         }
         return false;
 
+    }
+
+    public boolean delUser(User user) {
+        int kt = db.delete(UserCreate.TB_USER, UserCreate.ID_USER + "=" + user.getId(), null);
+        if (kt != 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean editUser(User user) {
+        User unew = new User();
+        ContentValues contentValues = new ContentValues();
+       /* contentValues.put();
+        int kt = db.update(UserCreate.TB_USER, UserCreate.ID_USER + "=" + user.getId(), null);*/
+
+        return false;
     }
 
 }

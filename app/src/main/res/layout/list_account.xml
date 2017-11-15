@@ -2,11 +2,11 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:padding="5dp">
+    android:padding="1dp">
 
     <ImageView
         android:id="@+id/image"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/txtName"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:textSize="22sp"
         android:text="@string/nameUser"
         android:layout_toRightOf="@+id/image"
@@ -34,4 +34,5 @@
         android:layout_toEndOf="@+id/image"
         android:gravity="left"
         android:text="@string/detail" />
+
 </RelativeLayout>

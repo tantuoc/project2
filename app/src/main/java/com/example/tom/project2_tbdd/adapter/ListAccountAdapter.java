@@ -56,7 +56,7 @@ public class ListAccountAdapter extends BaseAdapter
         TextView txtName = view.findViewById(R.id.txtName);
         TextView txtDetail = view.findViewById(R.id.txtDetail);
 
-        if (userlist.get(i).getGenre() == 1){
+        /*if (userlist.get(i).getGenre() == 1){
             hinh.setImageResource(R.drawable.boy);
 
         }
@@ -66,10 +66,15 @@ public class ListAccountAdapter extends BaseAdapter
         }
         if(userlist.get(i).getGenre() == 0){
             hinh.setImageResource(R.drawable.gay);
-
         }
         else{
             hinh.setImageResource(R.drawable.ninja);
+        }*/
+        switch ((int) userlist.get(i).getGenre()){
+            case 0:  hinh.setImageResource(R.drawable.gay); break;
+            case 1:  hinh.setImageResource(R.drawable.boy); break;
+            case 2:   hinh.setImageResource(R.drawable.girl); break;
+            default:  hinh.setImageResource(R.drawable.ninja); break;
         }
         txtDetail.setText("Press to more information.");
 

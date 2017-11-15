@@ -1,21 +1,22 @@
 package com.example.tom.project2_tbdd.activity;
 
-import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.tom.project2_tbdd.R;
 import com.example.tom.project2_tbdd.dao.UserDAO;
 import com.example.tom.project2_tbdd.model.User;
-import com.example.tom.project2_tbdd.sqlLite.UserCreate;
+
 
 import java.util.List;
 
@@ -26,10 +27,10 @@ public class RegActivity extends AppCompatActivity {
     EditText editUsername, editPass, editXNMK, editEmail;
     CheckBox checked;
     RadioButton radNa, radNu, radKhac;
-    UserCreate uc;
+
     UserDAO userDAO;
-    User u;
-    RadioGroup groupGenre;
+
+    RadioGroup radioGroup;
 
 
     @Override
@@ -46,7 +47,7 @@ public class RegActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.editTextEmail);
 
         checked = findViewById(R.id.checked);
-
+        radioGroup =findViewById(R.id.groupGenre);
         radNa = findViewById(R.id.nam);
         radNu = findViewById(R.id.nu);
         radKhac = findViewById(R.id.khac);
@@ -72,7 +73,7 @@ public class RegActivity extends AppCompatActivity {
                 String repass = editXNMK.getText().toString();
                 String username = editUsername.getText().toString();
                 String email = editEmail.getText().toString();
-                long genre =-1;
+
 
 
                 if (password.trim().equals("") || repass.trim().equals("") || username.trim().equals("") || email.trim().equals("")) {
@@ -81,23 +82,20 @@ public class RegActivity extends AppCompatActivity {
                 } else {
                     if (repass.trim().equals(password)) {
                         if (checked.isChecked()) {
-                            switch (R.id.groupGenre) {
-                                case R.id.nam:
-                                    genre = 1;
-                                    break;
-                                case R.id.nu:
-                                    genre = 2;
-                                    break;
-                                case R.id.khac:
-                                    genre = 0;
-                                    break;
-                            }
-                            u = new User(username, password, email, genre);
-                            boolean adduser = userDAO.addUser(u);
+                           User u = new User();
+                            u.setUsername(username);
+                            u.setPassword(password);
+                            u.setEmail(email);
 
-                            if (adduser) {
+                           if(radNa.isChecked()) u.setGenre(1);
+                           else if(radNu.isChecked()) u.setGenre(2);
+                           else if (radKhac.isChecked())u.setGenre(0);
+
+                           boolean addUser = userDAO.addUser(u);;
+                            if (addUser) {
                                 Toast.makeText(getApplicationContext(), "Tạo user Thành công!", Toast.LENGTH_LONG).show();
                                 finish();
+
                             } else {
                                 Toast.makeText(getApplicationContext(), "Tạo user không Thành công!", Toast.LENGTH_LONG).show();
                             }
